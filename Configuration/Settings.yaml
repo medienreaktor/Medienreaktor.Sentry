@@ -1,0 +1,5 @@
+PunktDe:
+  Sentry:
+    Flow:
+      environment: '%env:FLOW_CONTEXT%'
+      transportClass: '\Medienreaktor\Sentry\Transport\GuzzleAsyncTransport'
