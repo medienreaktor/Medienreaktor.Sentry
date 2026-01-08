@@ -4,7 +4,7 @@ Non-blocking asynchronous Sentry transport for Neos Flow applications.
 
 ## Overview
 
-This package extends [PunktDe.Sentry.Flow](https://github.com/punktDe/sentry-flow) with a high-performance, asynchronous transport layer that prevents Sentry logging from impacting application response times. By using Guzzle's async capabilities in a fire-and-forget manner, error reporting happens in the background without blocking the main request.
+This package extends [PunktDe.Sentry.Flow](https://github.com/punktDe/sentry-flow) with a asynchronous transport layer that prevents Sentry logging from impacting application response times. By using Guzzle's async capabilities in a fire-and-forget manner, error reporting happens in the background without blocking the main request.
 
 ## Why this package?
 
