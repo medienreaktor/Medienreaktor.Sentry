@@ -47,6 +47,12 @@ The `GuzzleAsyncTransport` implements Sentry's `TransportInterface` and:
 - Logs successes and failures for debugging purposes
 - Gracefully handles errors in fire-and-forget mode
 
+## Flow 9.2 and PHP 8.4
+
+Since Flow 9.2, singletons are handed out as native lazy proxies on PHP 8.4. They only build the real object once one of its properties is accessed. `SentryClient::getSentryClient()` from PunktDe.Sentry.Flow reads no property, so on an untouched proxy it returns `null`, and `./flow sentry:test` reports "The Sentry client could not be initialized properly" although Sentry is configured. Error reporting itself was never affected.
+
+`Medienreaktor\Sentry\Aspect\LazySentryClientAspect` initializes the proxy before `getSentryClient()` runs. On older PHP versions it does nothing.
+
 ## License
 
 This package is open source software. For license information, please see the LICENSE file.
